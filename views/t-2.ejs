@@ -1,0 +1,61 @@
+<%- include ('partials/header.ejs') %>
+<body>
+    <%- include ('partials/navbar.ejs') %>
+    <br>
+    <div class="container">
+        <div class="card">
+            <h3>TELA 2 (tela alpha)</h3>
+        </div>
+        <div class="card-body">
+            <form>
+                <h6>TIPO DE PESSOA</h6>
+                <input class="form-check-input" type="radio" name="tipoPessoa" id="pf">  Pessoa Física
+                <br>
+                <input class="form-check-input" type="radio" name="tipoPessoa" id="pj">  Pessoa Jurídica
+                <br>
+                <br>
+                <h6>DADOS PESSOAIS</h6>
+                <input type="text" placeholder="nome completo" class="form-control" name="nome" id="nome">
+                <input type="text" placeholder="CPF/CNPJ" class="form-control" name="cpf-cnpj" id="cpf-cnpj">
+                <input type="text" placeholder="celular" class="form-control" name="cel" id="cel">
+                <input type="text" placeholder="nascimento" class="form-control" name="nascimento" id="nascimento">
+                <input type="text" placeholder="E-mail" class="form-control" name="email" id="email">
+                <input type="text" placeholder="defina uma senha" class="form-control" name="senha" id="senha">
+                <input type="text" placeholder="repita sua senha" class="form-control" name="csenha" id="csenha">
+                <h6>SEXO</h6>
+                <input class="form-check-input" type="radio" name="sexo" id="m">  Masculino
+                <br>
+                <input class="form-check-input" type="radio" name="sexo" id="f">  Feminino
+                <br>
+                <input class="form-check-input" type="radio" name="sexo" id="o">  Outro
+                <br>
+                <br>
+                <h6>ENDEREÇO</h6>
+                <input type="text" placeholder="CEP" class="form-control" name="cep" id="cep">
+                <input type="text" placeholder="logradouro" class="form-control" name="logradouro" id="logradouro">
+                <input type="text" placeholder="número" class="form-control" name="numero" id="numero">
+                <input type="text" placeholder="complemento" class="form-control" name="complemento" id="complemento">
+                <input type="text" placeholder="bairro" class="form-control" name="bairro" id="bairro">
+                <input type="text" placeholder="cidade" class="form-control" name="cidade" id="cidade">
+                <input type="text" placeholder="UF" class="form-control" name="uf" id="uf">
+                <br>
+                <h6>ATIVIDADES</h6>
+                <input class="form-check-input" type="checkbox" name="atividade" id="construcor">  Construcor
+                <br>
+                <input class="form-check-input" type="checkbox" name="atividade" id="projetista">  Projetista
+                <br>
+                <input class="form-check-input" type="checkbox" name="atividade" id="orcamentista">  Orcamentista
+                <br>
+                <input class="form-check-input" type="checkbox" name="atividade" id="tecnologo">  Técnologo
+                <br>
+                <input class="form-check-input" type="checkbox" name="atividade" id="engenheiro">  Engenheiro
+                <br>
+                <input class="form-check-input" type="checkbox" name="atividade" id="arquiteto">  Arquiteto
+                <br>
+                <br>
+                <button type="button" class="btn btn-primary">Concluir Cadastro</button>           
+            </form>
+        </div>        
+    </div>
+</body>
+<%- include ('partials/footer.ejs') %>
