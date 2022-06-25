@@ -23,24 +23,32 @@ app.get("/teste",function(req,res){
 app.post("/salvarcadastro",(req, res) => {
 
     // TIPO DE PESSOA (falta)
+    var tipoPessoa = req.body.tipoPessoa
 
     //DADOS PESSOAIS
-    let nome = req.body.nome
-    let cpfCnpj = req.body.cpfCnpj
-    let cel = req.body.cel
-    let nascimento = req.body.nascimento
-    let email = req.body.email
-    let senha = req.body.senha
+    var nome = req.body.nome
+    var cpfCnpj = req.body.cpfCnpj
+    var cel = req.body.cel
+    var nascimento = req.body.nascimento
+    var email = req.body.email
+    var senha = req.body.senha
     
     //ENDEREÇO
-    let cep = req.body.cep
-    let logradouro = req.body.logradouro
-    let numero = req.body.numero
-    let complemento = req.body.complemento
-    let bairro = req.body.bairro
-    let cidade = req.body.cidade
-    let uf = req.body.uf
+    var cep = req.body.cep
+    var logradouro = req.body.logradouro
+    var numero = req.body.numero
+    var complemento = req.body.complemento
+    var bairro = req.body.bairro
+    var cidade = req.body.cidade
+    var uf = req.body.uf
 
+    //ATIVIDADES (falta)
+    var construtor = req.body.construtor
+    var projetista = req.body.projetista
+    var orcamentista = req.body.orcamentista
+    var tecnologo = req.body.tecnologo
+    var engenheiro = req.body.engenheiro
+    var arquiteto = req.body.arquiteto
 
     res.send(tipoPessoa)
 })
