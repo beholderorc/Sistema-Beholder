@@ -1,0 +1,17 @@
+<%- include ('partials/header.ejs') %>
+<body>
+    <%- include ('partials/navbar.ejs') %>
+    <br>
+    <div class="container">
+        <div class="card">
+            <h3>TELA 2 (tela alpha)</h3>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/resposta">
+                <input type="text" placeholder="nome completo" class="form-control">
+                <button type="submit" class="btn btn-primary">Concluir Cadastro</button>           
+            </form>
+        </div>        
+    </div>
+</body>
+<%- include ('partials/footer.ejs') %>

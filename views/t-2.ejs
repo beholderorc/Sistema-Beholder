@@ -7,7 +7,7 @@
             <h3>TELA 2 (tela alpha)</h3>
         </div>
         <div class="card-body">
-            <form>
+            <form method="POST" action="/salvarcadastro">
                 <h6>TIPO DE PESSOA</h6>
                 <input class="form-check-input" type="radio" name="tipoPessoa" id="pf">  Pessoa Física
                 <br>
@@ -16,7 +16,7 @@
                 <br>
                 <h6>DADOS PESSOAIS</h6>
                 <input type="text" placeholder="nome completo" class="form-control" name="nome" id="nome">
-                <input type="text" placeholder="CPF/CNPJ" class="form-control" name="cpf-cnpj" id="cpf-cnpj">
+                <input type="text" placeholder="CPF/CNPJ" class="form-control" name="cpfCnpj" id="cpfCnpj">
                 <input type="text" placeholder="celular" class="form-control" name="cel" id="cel">
                 <input type="text" placeholder="nascimento" class="form-control" name="nascimento" id="nascimento">
                 <input type="text" placeholder="E-mail" class="form-control" name="email" id="email">
@@ -40,7 +40,7 @@
                 <input type="text" placeholder="UF" class="form-control" name="uf" id="uf">
                 <br>
                 <h6>ATIVIDADES</h6>
-                <input class="form-check-input" type="checkbox" name="atividade" id="construcor">  Construcor
+                <input class="form-check-input" type="checkbox" name="atividade" id="construcor">  Construtor
                 <br>
                 <input class="form-check-input" type="checkbox" name="atividade" id="projetista">  Projetista
                 <br>
@@ -53,7 +53,7 @@
                 <input class="form-check-input" type="checkbox" name="atividade" id="arquiteto">  Arquiteto
                 <br>
                 <br>
-                <button type="button" class="btn btn-primary">Concluir Cadastro</button>           
+                <button type="submit" class="btn btn-primary">Concluir Cadastro</button>           
             </form>
         </div>        
     </div>
