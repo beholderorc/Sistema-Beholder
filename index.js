@@ -50,7 +50,7 @@ app.post("/salvarcadastro",(req, res) => {
     var engenheiro = req.body.engenheiro
     var arquiteto = req.body.arquiteto
 
-    res.send(tipoPessoa)
+    res.send(orcamentista)
 })
 
 app.post("/resposta",(req, res) => {
