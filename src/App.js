@@ -146,7 +146,7 @@ const App = () => {
         </FormGroup>
         <Stack container alignItems="flex-end">
           <Button
-            sx={{ background: 'red' }}
+            sx={{ background: '#000', color: '#ffc107' }}
             type="submit"
             variant="contained"
             startIcon={<SaveIcon />}
