@@ -15,7 +15,7 @@ const App = () => {
     contato: '',
     estado: '',
     cidade: '',
-    email: '',
+    email: '21',
     // material: false,
     // equipamento: false,
     // maodeobra: false,
