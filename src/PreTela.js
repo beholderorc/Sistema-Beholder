@@ -9,6 +9,7 @@ import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import CloseIcon from '@mui/icons-material/Close';
 import App from './App';
+import { Grid } from '@mui/material';
 //import SaveIcon from '@mui/icons-material/Save';
 
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
@@ -62,9 +63,11 @@ export default function CustomizedDialogs() {
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
-        Cadastrar Novo Fornecedor
-      </Button>
+      <Grid container sx={{ paddingTop: '10px' }}>
+        <Button variant="outlined" onClick={handleClickOpen}>
+          Cadastrar Novo Fornecedor
+        </Button>
+      </Grid>
       <BootstrapDialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
