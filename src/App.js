@@ -4,18 +4,51 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import FormGroup from '@mui/material/FormGroup';
+import FormLabel from '@mui/material/FormLabel';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Stack from '@mui/material/Stack';
 import SaveIcon from '@mui/icons-material/Save';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const App = () => {
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#000',
+      darker: '#053e85',
+      contrastText: '#ffc107',
+    },
+    secondary: {
+      main: '#ffc107',
+      contrastText: 'bolder',
+    },
+    neutral: {
+      main: '#64748B',
+      contrastText: '#fff',
+    },
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: ({ ownerState }) => ({
+          ...(ownerState.variant === 'contained' &&
+            ownerState.color === 'primary' && {
+              backgroundColor: '#202020',
+              color: '#ffc107',
+            }),
+        }),
+      },
+    },
+  },
+});
+
+const App = (props) => {
   const [form, setForm] = React.useState({
     fornecedor: '',
     contato: '',
     estado: '',
     cidade: '',
-    email: '21',
+    email: '',
     // material: false,
     // equipamento: false,
     // maodeobra: false,
@@ -51,109 +84,117 @@ const App = () => {
   return (
     <Box>
       <form onSubmit={handleSubmit}>
-        <Grid container direction="column" alignItems="center">
-          <TextField
-            fullWidth
-            type="text"
-            id="fornecedor"
-            label="Fornecedor"
-            variant="standard"
-            value={form.fornecedor}
-            onChange={handleChange}
-          >
-            Fornecedor
-          </TextField>
+        <ThemeProvider theme={theme}>
+          <Grid container direction="column" alignItems="center">
+            <TextField
+              fullWidth
+              type="text"
+              id="fornecedor"
+              label="Fornecedor"
+              variant="standard"
+              value={form.fornecedor}
+              onChange={handleChange}
+            >
+              Fornecedor
+            </TextField>
 
-          <TextField
-            fullWidth
-            type="text"
-            id="contato"
-            label="Contato"
-            variant="standard"
-            value={form.contato}
-            onChange={handleChange}
-          >
-            Contato
-          </TextField>
+            <TextField
+              fullWidth
+              type="text"
+              id="contato"
+              label="Contato"
+              variant="standard"
+              value={form.contato}
+              onChange={handleChange}
+            >
+              Contato
+            </TextField>
 
-          <TextField
-            fullWidth
-            type="text"
-            id="estado"
-            label="Estado"
-            variant="standard"
-            value={form.estado}
-            onChange={handleChange}
-          >
-            Estado
-          </TextField>
-          <TextField
-            fullWidth
-            type="text"
-            id="cidade"
-            label="Cidade"
-            variant="standard"
-            value={form.cidade}
-            onChange={handleChange}
-          >
-            Cidade
-          </TextField>
+            <TextField
+              fullWidth
+              type="text"
+              id="estado"
+              label="Estado"
+              variant="standard"
+              value={form.estado}
+              onChange={handleChange}
+            >
+              Estado
+            </TextField>
+            <TextField
+              fullWidth
+              type="text"
+              id="cidade"
+              label="Cidade"
+              variant="standard"
+              value={form.cidade}
+              onChange={handleChange}
+            >
+              Cidade
+            </TextField>
 
-          <TextField
-            fullWidth
-            type="email"
-            id="email"
-            label="Email"
-            variant="standard"
-            value={form.email}
-            onChange={handleChange}
-          >
-            Email
-          </TextField>
-        </Grid>
-
-        <FormGroup>
-          <Grid container direction="row">
-            <FormControlLabel
-              control={<Checkbox />}
-              label="Material"
-              id="material"
-              name="material"
-              value="material"
-              checked={caixa.includes('material')}
-              onChange={checagemBox}
-            />
-            <FormControlLabel
-              control={<Checkbox />}
-              label="Equipamento"
-              id="equipamento"
-              name="equipamento"
-              value="equipamento"
-              checked={caixa.includes('equipamento')}
-              onChange={checagemBox}
-            />
-            <FormControlLabel
-              control={<Checkbox />}
-              label="Mão de Obra"
-              name="maodeobra"
-              value="maodeobra"
-              checked={caixa.includes('maodeobra')}
-              id="maodeobra"
-              onChange={checagemBox}
-            />
-            {/* <FormControlLabel control={<Checkbox />} label="Marcar Todos" /> */}
+            <TextField
+              fullWidth
+              type="email"
+              id="email"
+              label="Email"
+              variant="standard"
+              value={form.email}
+              onChange={handleChange}
+            >
+              Email
+            </TextField>
           </Grid>
-        </FormGroup>
-        <Stack container alignItems="flex-end">
-          <Button
-            sx={{ background: '#000', color: '#ffc107' }}
-            type="submit"
-            variant="contained"
-            startIcon={<SaveIcon />}
-          >
-            Salvar
-          </Button>
-        </Stack>
+
+          <FormGroup>
+            <Grid container sx={{ justifyContent: 'center', pt: '30px' }}>
+              <FormLabel sx={{ fontWeight: 'bolder' }}>
+                Tipos de Serviços Fornecidos
+              </FormLabel>
+            </Grid>
+            <Grid container direction="row">
+              <FormControlLabel
+                control={<Checkbox sx={{ color: '#000' }} />}
+                label="Material"
+                id="material"
+                name="material"
+                value="material"
+                checked={caixa.includes('material')}
+                onChange={checagemBox}
+              />
+              <FormControlLabel
+                control={<Checkbox sx={{ color: '#000' }} />}
+                label="Equipamento"
+                id="equipamento"
+                name="equipamento"
+                value="equipamento"
+                checked={caixa.includes('equipamento')}
+                onChange={checagemBox}
+              />
+              <FormControlLabel
+                control={<Checkbox sx={{ color: '#000' }} />}
+                label="Mão de Obra"
+                name="maodeobra"
+                value="maodeobra"
+                checked={caixa.includes('maodeobra')}
+                id="maodeobra"
+                onChange={checagemBox}
+              />
+
+              {/* <FormControlLabel control={<Checkbox />} label="Marcar Todos" /> */}
+            </Grid>
+          </FormGroup>
+          <Stack container alignItems="flex-end">
+            <Button
+              type="submit"
+              onClick={props.event}
+              variant="contained"
+              startIcon={<SaveIcon />}
+            >
+              Salvar
+            </Button>
+          </Stack>
+        </ThemeProvider>
       </form>
     </Box>
   );
