@@ -6,10 +6,14 @@ import Grid from '@mui/material/Grid';
 import FormGroup from '@mui/material/FormGroup';
 import FormLabel from '@mui/material/FormLabel';
 import FormControlLabel from '@mui/material/FormControlLabel';
+//import InputLabel from '@mui/material/InputLabel';
 import Checkbox from '@mui/material/Checkbox';
 import Stack from '@mui/material/Stack';
 import SaveIcon from '@mui/icons-material/Save';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+//import FormControl from '@mui/material/FormControl';
+//import { fetchStates } from './Api-IBGE';
+//import FormularioEstados from './Form';
 
 const theme = createTheme({
   palette: {
@@ -97,7 +101,6 @@ const App = (props) => {
             >
               Fornecedor
             </TextField>
-
             <TextField
               fullWidth
               type="text"
@@ -109,9 +112,9 @@ const App = (props) => {
             >
               Contato
             </TextField>
-
             <TextField
               fullWidth
+              select
               type="text"
               id="estado"
               label="Estado"
@@ -119,8 +122,10 @@ const App = (props) => {
               value={form.estado}
               onChange={handleChange}
             >
+              {' '}
               Estado
             </TextField>
+
             <TextField
               fullWidth
               type="text"
@@ -132,7 +137,6 @@ const App = (props) => {
             >
               Cidade
             </TextField>
-
             <TextField
               fullWidth
               type="email"
