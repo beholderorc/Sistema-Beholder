@@ -70,9 +70,18 @@ class Navibar extends React.Component {
                   top: '500px',
                   left: '500px',
                 }}
+                className="ponteiro"
                 title={`Video Teste`}
                 url="https://www.youtube.com/embed/DLyCcp9jKPA"
-                onClosing={() => this.handleOnClose()}
+                onClosing={(event, reason) => {
+                  if (
+                    reason !== 'backdropClick' &&
+                    reason !== 'escapeKeyDown'
+                  ) {
+                    // Set 'open' to false, however you would do that with your particular code.
+                    this.setState(false);
+                  }
+                }}
               >
                 {/* <iframe
                   id="player"

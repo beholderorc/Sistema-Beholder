@@ -31,6 +31,7 @@ export default function BasicModal() {
       <Modal
         open={open}
         onClose={handleClose}
+        closeOnOverlayClick={false}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >

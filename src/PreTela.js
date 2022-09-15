@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@mui/material/Button';
-import { styled } from '@mui/material/styles';
+//import { styled } from '@mui/material/styles';
 import Dialog from '@mui/material/Dialog';
 import DialogTitle from '@mui/material/DialogTitle';
 import DialogContent from '@mui/material/DialogContent';
@@ -11,15 +11,6 @@ import CloseIcon from '@mui/icons-material/Close';
 import App from './App';
 import { Grid } from '@mui/material';
 //import SaveIcon from '@mui/icons-material/Save';
-
-const BootstrapDialog = styled(Dialog)(({ theme }) => ({
-  '& .MuiDialogContent-root': {
-    padding: theme.spacing(2),
-  },
-  '& .MuiDialogActions-root': {
-    padding: theme.spacing(1),
-  },
-}));
 
 const BootstrapDialogTitle = (props) => {
   const { children, onClose, ...other } = props;
@@ -57,9 +48,15 @@ export default function CustomizedDialogs() {
   const handleClickOpen = () => {
     setOpen(true);
   };
+
   const handleClose = () => {
     setOpen(false);
   };
+  // const handleBackdropClick = () => {
+  //   //these fail to keep the modal open
+  //   event.stopPropagation();
+  //   return false;
+  // };
 
   return (
     <div>
@@ -68,10 +65,15 @@ export default function CustomizedDialogs() {
           Cadastrar Novo Fornecedor
         </Button>
       </Grid>
-      <BootstrapDialog
-        onClose={handleClose}
+      <Dialog
         aria-labelledby="customized-dialog-title"
         open={open}
+        onClose={(event, reason) => {
+          if (reason !== 'backdropClick' && reason !== 'escapeKeyDown') {
+            // Set 'open' to false, however you would do that with your particular code.
+            setOpen(false);
+          }
+        }}
       >
         <BootstrapDialogTitle
           id="customized-dialog-title"
@@ -83,7 +85,7 @@ export default function CustomizedDialogs() {
           <App event={handleClose} />
         </DialogContent>
         <DialogActions></DialogActions>
-      </BootstrapDialog>
+      </Dialog>
     </div>
   );
 }

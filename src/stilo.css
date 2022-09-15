@@ -5,4 +5,7 @@
 .Titulo{
   color:red;
 }
-
+.poonteiro{
+  pointer-events: none;
+  position: fixed;
+}
